@@ -66,6 +66,7 @@ include_once 'data/agregar.php';
            </div>
           
            <input type="submit" value="Agregar" class="btn btn-primary">
+           <a href="productos.php" class="btn btn-danger">Cancelar</a>
            
         </form>
     </div>
