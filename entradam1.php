@@ -44,11 +44,10 @@ include_once 'includes/templates/header.php';
                                         <th>Precio</th>
                                         <th>Stock</th>
                                         <th>Marca</th>
-                                        <th>Categoria</th>
                                         <th>Modificar</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody >
                                     <td></td>
                                     <td></td>
                                     <td></td>
@@ -56,7 +55,8 @@ include_once 'includes/templates/header.php';
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                    <td><a href="entradapm.php" class="btn btn-primary">Modificar</a></td>
+                                    <td><a href="productos.php" class="btn btn-primary">Modificar</a></td>
+                                    
                                 
 
                                 </tbody>

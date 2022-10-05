@@ -53,18 +53,20 @@ include_once 'includes/templates/header.php';
                 <input type="text" name="precio" id="precio" class="form-control">
            </div>
 
+           <div class="mb-3">
+                <label for="precio">Stock:</label>
+                <input type="text" name="precio" id="precio" class="form-control">
+           </div>
+
            
            <div class="mb-3">
                 <label for="marca">Marca:</label>
                 <input type="text" name="marca" id="marca" class="form-control">
            </div>
 
-           <div class="mb-3">
-                <label for="categoria" class="form-label">Categoria:</label>
-                <input type="text" name="categoria" id="categoria" class="form-control">
-           </div>
      
-           <input type="submit" value="Moficar" class="btn btn-primary">
+          <input type="submit" value="Modificar" class="btn btn-primary">
+          <a href="entradam1.php" class="btn btn-danger">Cancelar</a>
         </form>
     </div>
     <br>

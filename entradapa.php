@@ -1,5 +1,6 @@
 <?php
 include_once 'includes/templates/header.php';
+include_once 'data/agregar.php';
 ?>
 
 <div class="content-wrapper">
@@ -53,20 +54,19 @@ include_once 'includes/templates/header.php';
                 <input type="text" name="precio" id="precio" class="form-control">
            </div>
 
+           <div class="mb-3">
+                <label for="stock">Stock:</label>
+                <input type="text" name="stock" id="stock" class="form-control">
+           </div>
+
            
            <div class="mb-3">
                 <label for="marca">Marca:</label>
                 <input type="text" name="marca" id="marca" class="form-control">
            </div>
-
-           <div class="mb-3">
-                <label for="categoria" class="form-label">Categoria:</label>
-                <input type="text" name="categoria" id="categoria" class="form-control">
-           </div>
-
           
-           
            <input type="submit" value="Agregar" class="btn btn-primary">
+           
         </form>
     </div>
     <br>

@@ -1,5 +1,6 @@
 <?php
 include_once 'includes/templates/header.php';
+
 ?>
 
 <div class="content-wrapper">
@@ -8,7 +9,7 @@ include_once 'includes/templates/header.php';
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Listado de Productos</h1>
+                    <h1 class="m-0">Eliminar productos</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -38,26 +39,21 @@ include_once 'includes/templates/header.php';
                             <table class="table table-hover text-nowrap">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
+                                        <th>Id</th>
                                         <th>Nombre</th>
                                         <th>Descripcion</th>
                                         <th>Precio</th>
                                         <th>Stock</th>
                                         <th>Marca</th>
-                                        <th>Categoria</th>
                                         <th>Eliminar</th>
                                     </tr>
                                 </thead>
-                                <tbody >
-                                <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td><a href="salidap.php" class="btn btn-primary">Eliminar</a></td>
+                                <tbody id = "tblData">
+                    
+                        
+                                    </td>
 
+                                    </tr>                  
                                 </tbody>
                             </table>
                         </div>
