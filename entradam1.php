@@ -8,7 +8,7 @@ include_once 'includes/templates/header.php';
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Listado de Productos</h1>
+                    <h1 class="m-0">Modificar productos</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -45,25 +45,26 @@ include_once 'includes/templates/header.php';
                                         <th>Stock</th>
                                         <th>Marca</th>
                                         <th>Categoria</th>
-                                        <th>Eliminar</th>
+                                        <th>Modificar</th>
                                     </tr>
                                 </thead>
-                                <tbody >
-                                <td></td>
+                                <tbody>
                                     <td></td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                    <td><a href="salidap.php" class="btn btn-primary">Eliminar</a></td>
+                                    <td></td>
+                                    <td><a href="entradapm.php" class="btn btn-primary">Modificar</a></td>
+                                
 
                                 </tbody>
                             </table>
+                            
                         </div>
-
+                        
                     </div>
-
                 </div>
             </div>
         </div>
