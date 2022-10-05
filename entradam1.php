@@ -55,7 +55,7 @@ include_once 'includes/templates/header.php';
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                    <td><a href="productos.php" class="btn btn-primary">Modificar</a></td>
+                                    <td><a href="entradapm.php" class="btn btn-primary">Modificar</a></td>
                                     
                                 
 
