@@ -8,7 +8,7 @@ include_once 'includes/templates/header.php';
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Entrada de productos</h1>
+                    <h1 class="m-0">Modificar productos</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -34,53 +34,44 @@ include_once 'includes/templates/header.php';
                             </div>
                         </div>
 
-                        <div class="container">
-        <h1>Modificar producto</h1>
-        <form method="POST">
-           <div class="mb-3">
-                <label for="nombre" class="form-label">Nombre:</label>
-                <input type="text" name="nombre" id="nombre" class="form-control">
-           </div>
+                        <div class="card-body table-responsive p-0">
+                            <table class="table table-hover text-nowrap">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Nombre</th>
+                                        <th>Descripcion</th>
+                                        <th>Precio</th>
+                                        <th>Stock</th>
+                                        <th>Marca</th>
+                                        <th>Modificar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="entradapm.php" class="btn btn-primary">Modificar</a></td>
 
-           <div class="mb-3">
-                <label for="descripcion" class="form-label">Descripcion:</label>
-                <textarea name="descripcion" id="descripcion" rows="3"
-                 class="form-control"></textarea>
-           </div>
 
-           <div class="mb-3">
-                <label for="precio">Precio:</label>
-                <input type="text" name="precio" id="precio" class="form-control">
-           </div>
 
-           <div class="mb-3">
-                <label for="precio">Stock:</label>
-                <input type="text" name="precio" id="precio" class="form-control">
-           </div>
+                                </tbody>
+                            </table>
 
-           
-           <div class="mb-3">
-                <label for="marca">Marca:</label>
-                <input type="text" name="marca" id="marca" class="form-control">
-           </div>
+                        </div>
 
-     
-          <input type="submit" value="Modificar" class="btn btn-primary">
-          <a href="entradam1.php" class="btn btn-danger">Cancelar</a>
-        </form>
-    </div>
-    <br>
-
-                        
                     </div>
-
                 </div>
             </div>
         </div>
     </section>
 </div>
 
-<script src = "assets/js/productos.js"></script>
+<script src="assets/js/productos.js"></script>
 <?php
 include_once 'includes/templates/footer.php'
 ?>

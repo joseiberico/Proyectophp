@@ -19,7 +19,7 @@
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <h1 class = "card-body login-card-body"><b>TECNOVENTAS</b></h1>
+            <h1 class="card-body login-card-body"><b>TECNOVENTAS</b></h1>
         </div>
         <!-- /.login-logo -->
         <div class="card">
@@ -28,10 +28,7 @@
 
                 <form action="assets/admin/index3.html" method="post">
                     <div class="input-group mb-3">
-                        <input type="text" 
-                            class="form-control" 
-                            placeholder="usuario"
-                            id="usuario">
+                        <input type="text" class="form-control" placeholder="usuario" id="usuario">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-user"></span>
@@ -39,10 +36,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" 
-                            class="form-control" 
-                            placeholder="Password"
-                            id="password">
+                        <input type="password" class="form-control" placeholder="Password" id="password">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
@@ -72,7 +66,7 @@
     <script src="assets/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Sweetalert -->
-    <!--<script src="assets/admin/plugins/sweetalert2/sweetalert2.js"></script>-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- AdminLTE App -->
     <script src="assets/admin/dist/js/adminlte.min.js"></script>
 

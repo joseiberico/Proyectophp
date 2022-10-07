@@ -15,6 +15,8 @@
 <script>
   $.widget.bridge('uibutton', $.ui.button)
 </script>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="assets/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- ChartJS -->
@@ -43,12 +45,6 @@
 <script src="assets/admin/dist/js/pages/dashboard.js"></script>
 </body>
 
-<footer class="main-footer">
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.2.0
-    </div>
-  </footer>
+
 
 </html>

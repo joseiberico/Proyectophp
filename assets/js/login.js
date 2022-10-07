@@ -11,8 +11,13 @@ async function iniciarSesion(){
     const txtUsuario = document.querySelector('#usuario');
     const txtPassword = document.querySelector('#password');
     if(txtUsuario.value === '' || txtPassword.value === ''){
-        alert('Debe completar los datos');
-        return;
+        swal({
+            icon: 'error',
+            title: 'Opa...',
+            text: 'Rellenar los campos!',
+            footer: '<a href="">Why do I have this issue?</a>'
+          });
+          return;
     }
     const datos = new FormData();
     datos.append("usuario", txtUsuario.value);
@@ -27,6 +32,6 @@ async function iniciarSesion(){
     if(resultado.codigo === 200){
         window.location = "index.php";
     } else {
-        alert(resultado.mensaje);
+        swal("Mal ahí", resultado.mensaje, "error");
     }
 }

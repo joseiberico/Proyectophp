@@ -32,7 +32,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="productos.php" class="nav-link">
+                            <a href="VistaProductos.php" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Visualizar productos</p>
                             </a>
@@ -50,7 +50,15 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="entradapa.php" class="nav-link">
+                            <a href="AgregarEntrada.php" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Agregar Entrada</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="AgregarProducto.php" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Agregar productos</p>
                             </a>
@@ -58,7 +66,7 @@
                     </ul>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="entradam1.php" class="nav-link">
+                            <a href="ModificarProducto.php" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Modificar productos</p>
                             </a>
@@ -76,9 +84,9 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="salidap.php" class="nav-link">
+                            <a href="AgregarSalida.php" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Eliminar productos</p>
+                                <p>Salida Nueva</p>
                             </a>
                         </li>
                     </ul>
