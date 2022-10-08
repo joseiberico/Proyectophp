@@ -1,4 +1,4 @@
-create database proyecto;
+/*create database proyecto;
 use proyecto;
 CREATE TABLE `categoria_producto` (
   `id` int NOT NULL AUTO_INCREMENT,
