@@ -1,7 +1,11 @@
 <?php
 include_once 'includes/templates/header.php';
 ?>
-
+<?php
+require('data/database.php');
+$sql="SELECT*FROM productos";
+$listado = $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+?>
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -45,9 +49,23 @@ include_once 'includes/templates/header.php';
                                         <th>Stock</th>
                                         <th>Marca</th>
                                         <th>Categoria</th>
-                                    </tr>
+                                   </tr>
                                 </thead>
-                                <tbody id="tblData">
+                                <tbody>
+                                <?php
+                            foreach ($listado as $row) {
+                            ?>
+                                <tr>
+                                    <td><?php echo $row['nombre']; ?></td>
+                                    <td><?php echo $row['descripcion']; ?></td>
+                                    <td><?php echo $row['precio']; ?></td>
+                                    <td><?php echo $row['stock']; ?></td>
+                                    <td><?php echo $row['marca']; ?></td>
+                                    <td><?php echo $row['categoria']; ?></td>
+                                    <td><a href="ModificarProducto.php?id=<?php echo $row['id']; ?>" class="btn btn-warning">Editar</a></td>
+                                    
+                                </tr>
+                            <?php } ?>
 
                                 </tbody>
                             </table>
@@ -61,7 +79,7 @@ include_once 'includes/templates/header.php';
     </section>
 </div>
 
-<script src="assets/js/ListarProducto.js"></script>
+
 <?php
 include_once 'includes/templates/footer.php'
 ?>
