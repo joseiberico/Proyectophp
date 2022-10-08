@@ -2,7 +2,17 @@
 include_once 'includes/templates/header.php';
 
 ?>
+<?php
+require "data/database.php";
 
+
+$sql = "SELECT * FROM categoria_producto";
+$resultado = $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+$tipos_cliente = [];
+foreach ($resultado as $tipo) {
+    $tipos_cliente[] = $tipo;
+}
+?>
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -36,7 +46,7 @@ include_once 'includes/templates/header.php';
                         </div>
                         <div class="container">
                             <h1>Agregar producto</h1>
-                            <form  id="formulario">
+                            <form id="formulario">
                                 <div class="mb-3">
                                     <label for="nombre" class="form-label">Nombre:</label>
                                     <input type="text" name="nombre" id="nombre" autocomplete="off" class="form-control">
@@ -44,7 +54,7 @@ include_once 'includes/templates/header.php';
 
                                 <div class="mb-3">
                                     <label for="descripcion" class="form-label">Descripcion:</label>
-                                    <textarea name="descripcion" id="descripcion"autocomplete="off" class="form-control"></textarea>
+                                    <textarea name="descripcion" id="descripcion" autocomplete="off" class="form-control"></textarea>
                                 </div>
 
                                 <div class="mb-3">
@@ -54,20 +64,31 @@ include_once 'includes/templates/header.php';
 
                                 <div class="mb-3">
                                     <label for="stock">Stock:</label>
-                                    <input type="text" name="stock" id="stock" autocomplete="off" class="form-control">
+                                    <input type="number" name="stock" id="stock" autocomplete="off" class="form-control">
                                 </div>
 
 
                                 <div class="mb-3">
                                     <label for="marca">Marca:</label>
-                                    <input type="text" name="marca" id="marca"  autocomplete="off" class="form-control">
+                                    <input type="numer" name="marca" id="marca" autocomplete="off" class="form-control">
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="categoria">Categoria:</label>
-                                    <input type="text" name="categoria" id="categoria"  autocomplete="off" class="form-control">
-                                </div>
-
+                                    <select id="categoria" name="categoria" class="form-control">
+                                        <option>-seleccione-</option>
+                                    
+                                        <?php
+                                        foreach ($tipos_cliente as $tipo) :
+                                        ?>
+                                            <option value="<?php echo $tipo['id'] ?>">
+                                                <?php echo $tipo['nombre'] ?>
+                                            </option>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                    </select>
+                                </div>                               
                                 <button id="boton" class="btn btn-primary">agregar</button>
                                 <a href="VistaProductos.php" class="btn btn-danger">Cancelar</a>
 
@@ -82,6 +103,7 @@ include_once 'includes/templates/header.php';
 </div>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="assets/js/productos.js"></script>
+<script src="assets/js/ListarCategoria.js"></script>
 <?php
 include_once 'includes/templates/footer.php'
 ?>
