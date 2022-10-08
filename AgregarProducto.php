@@ -68,8 +68,8 @@ include_once 'includes/templates/header.php';
                                     <input type="text" name="categoria" id="categoria"  autocomplete="off" class="form-control">
                                 </div>
 
-                                <button id="boton">asd</button>
-                                <a href="productos.php" class="btn btn-danger">Cancelar</a>
+                                <button id="boton" class="btn btn-primary">agregar</button>
+                                <a href="VistaProductos.php" class="btn btn-danger">Cancelar</a>
 
                             </form>
                         </div>
