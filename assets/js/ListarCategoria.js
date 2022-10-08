@@ -1,30 +1,27 @@
-"use strict"
-
 document.addEventListener('DOMContentLoaded', function(){
-    llamarDatos();
-})
-
-function llamarDatos() {
-    const btn = document.getElementById('tuki');
-    btn.addEventListener('click', obtenerCategoria)    
-}
+    iniciar();
+    })
+    
+    function iniciar(){
+        obtenerCategoria();
+    }
+    
 
 async function obtenerCategoria(){
     const url = "data/ListarCategoria.php?accion=listar";
     const respuesta = await fetch(url);
     const resultado = await respuesta.json();
-    if(resultado.codigo === 200){
-          
-      
+    if(resultado.codigo === 200){           
         const data = resultado.data;
-        let datos = "";
+        let html = "";
         data.forEach(categoria => {
-            datos += "<tr>";
-            datos += "<td>" + categoria.id + "</td>";         
-            datos += "<td>" + categoria.nombre + "</td>";
-            datos += "</tr>";
+            html += "<tr>";
+            html += "<td>" + categoria.id + "</td>";         
+            html += "<td>" + categoria.nombre + "</td>";
+            html += "</tr>";
         });
-        const tabla = document.getElementById("tbl");
-        tabla.innerHTML = datos
+        const tabla = document.querySelector("#tblCat");
+        tabla.innerHTML = html
+        //console.log(html);
     }
 }

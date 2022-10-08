@@ -38,6 +38,30 @@
                             </a>
                         </li>
                     </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="VistaCategorias.php" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Visualizar Categorias</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="VistaEntradas.php" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Visualizar Entradas</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="VistaSalidas.php" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Visualizar Salidas</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
 
                 <li class="nav-item">
