@@ -1,9 +1,7 @@
 <?php
+
 require_once('data/database.php');
-
-
 $id=$_GET['id'];
-
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
  
     $nombre = $_POST['nombre'];
@@ -17,7 +15,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     stock='$stock',marca='$marca',idcategoria='$idcategoria' WHERE id=$id";
     $resultado = $db->query($sql);
     if($resultado){
-        header('location:VistaProductos.php');
+        header('location:ModificarProducto.php');
     }
     
     exit;

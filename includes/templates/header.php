@@ -2,7 +2,7 @@
 session_start();
 require_once ('includes/commons/funciones.php');
 if(!isLogged()){
-  header('location:login.php');
+header('location:login.php');
 } 
 ?>
 <!DOCTYPE html>
@@ -54,8 +54,7 @@ if(!isLogged()){
 
   </nav>
   <!-- /.navbar -->
-
   <!-- Main Sidebar Container -->
-    <?php
-        include_once('includes/templates/sidebar.php');
-    ?>
+<?php
+  include_once('includes/templates/sidebar.php');
+?>

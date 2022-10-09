@@ -1,11 +1,7 @@
 <?php
 include_once 'includes/templates/header.php';
 ?>
-<?php
-require('data/database.php');
-$sql="SELECT*FROM producto";
-$listado = $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
-?>
+
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -49,24 +45,9 @@ $listado = $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
                                         <th>Stock</th>
                                         <th>Marca</th>
                                         <th>Categoria</th>
-                                   </tr>
+                                    </tr>
                                 </thead>
-                                <tbody>
-                                <?php
-                            foreach ($listado as $row) {
-                            ?>
-                                <tr>
-                                    <td><?php echo $row['id']; ?></td>
-                                    <td><?php echo $row['nombre']; ?></td>
-                                    <td><?php echo $row['descripcion']; ?></td>
-                                    <td><?php echo $row['precio']; ?></td>
-                                    <td><?php echo $row['stock']; ?></td>
-                                    <td><?php echo $row['marca']; ?></td>
-                                    <td><?php echo $row['idcategoria']; ?></td>
-                                    <td><a href="ModificarProducto.php?id=<?php echo $row['id']; ?>" class="btn btn-warning">Editar</a></td>
-                                    
-                                </tr>
-                            <?php } ?>
+                                <tbody id="tblData">
 
                                 </tbody>
                             </table>
@@ -80,7 +61,7 @@ $listado = $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     </section>
 </div>
 
-
+<script src="assets/js/ListarProducto.js"></script>
 <?php
 include_once 'includes/templates/footer.php'
 ?>
