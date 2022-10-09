@@ -20,10 +20,14 @@
         <!-- Sidebar Menu -->
         <div class='sidebar-heading' ></div>
               <div class='list-group list-group-flush' >
-                <a href='VistaProductos.php'  class='list-group-item list-group-item-action nav-item'>Productos</a>                   
+                <a href='VistaProductos.php'  class='list-group-item list-group-item-action nav-item'>Productos</a>     
+                <a href='AgregarProducto.php'  class='list-group-item list-group-item-action nav-item'>Agregar Productos</a>                 
                 <a href='vistaEntradas.php' class='list-group-item list-group-item-action '>Entrada</a>
+                <a href='AgregarEntrada.php' class='list-group-item list-group-item-action '>Agregar Entrada</a>
                 <a href='vistaSalidas.php' class='list-group-item list-group-item-action'>Salida</a>
+                <a href='AgregarSalida.php' class='list-group-item list-group-item-action'> Agregar Salida</a>
                 <a href='vistaCategorias.php' class='list-group-item list-group-item-action '>Categorias</a> 
+                <a href='AgregarCategorias.php' class='list-group-item list-group-item-action '>Agregar Categorias</a> 
               </div>
             </div>
     </div>
