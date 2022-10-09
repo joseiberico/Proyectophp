@@ -42,6 +42,7 @@
         async function obtenerProductos(){
             const url = "data/producto.php?accion=listar";
             const id = "ModificarProducto.php?id=";
+            const id2 = "EliminarProducto.php?id=";
          
            
           
@@ -60,6 +61,7 @@
                     html += "<td>" + producto.marca + "</td>";
                     html += "<td>" + producto.idcategoria + "</td>";
                     html += "<td><a href="+id+producto.id+" class='btn btn-warning'>Editar</a></td>";
+                    html += "<td><a href="+id2+producto.id+" class='btn btn-danger'>Eliminar</a></td>";
                     html += "</tr>";
                 });
         
