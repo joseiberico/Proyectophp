@@ -89,7 +89,7 @@ foreach ($resultado as $tipo) {
                                         ?>
                                     </select>
                                 </div>                               
-                                <button id="boton" class="btn btn-primary">agregar</button>
+                                <button id="boton" class="btn btn-primary">Agregar</button>
                                 <a href="VistaProductos.php" class="btn btn-danger">Cancelar</a>
 
                             </form>

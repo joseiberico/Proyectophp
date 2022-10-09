@@ -1,7 +1,25 @@
 <?php
 include_once 'includes/templates/header.php';
-?>
 
+?>
+<?php
+require "data/database.php";
+
+
+$sql = "SELECT * FROM producto";
+$resultado = $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+$tipos_producto = [];
+foreach ($resultado as $tipo) {
+    $tipos_producto[] = $tipo;
+
+$sql = "SELECT * FROM usuario";
+$resultado = $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+$tipos_usuario = [];
+foreach ($resultado as $tipo) {
+    $tipos_usuario[] = $tipo;
+}
+}
+?>
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -33,53 +51,72 @@ include_once 'includes/templates/header.php';
                                 </div>
                             </div>
                         </div>
-
                         <div class="container">
-                            <h1>Nueva Entrada</h1>
-                            <form method="POST">
-                                <div class="mb-3">
-                                    <label for="nombre" class="form-label">Nombre:</label>
-                                    <input type="text" name="nombre" id="nombre" class="form-control">
-                                </div>
+                            <h1>Agregar entrada</h1>
+                            <form id="formulario">
+                            <div class="mb-3">
+                                    <label for="idproducto">IdProducto:</label>
+                                    <select id="idproducto" name="idproducto" class="form-control">
+                                        <option>-seleccione-</option>
+                                    
+                                        <?php
+                                        foreach ($tipos_producto as $tipo) :
+                                        ?>
+                                            <option value="<?php echo $tipo['id'] ?>">
+                                                <?php echo $tipo['nombre'] ?>
+                                            </option>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                    </select>
+                                </div>                
 
                                 <div class="mb-3">
                                     <label for="descripcion" class="form-label">Descripcion:</label>
-                                    <textarea name="descripcion" id="descripcion" rows="3" class="form-control"></textarea>
+                                    <textarea name="descripcion" id="descripcion" autocomplete="off" class="form-control"></textarea>
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="precio">Precio:</label>
-                                    <input type="text" name="precio" id="precio" class="form-control">
+                                    <label for="stock">Stock:</label>
+                                    <input type="number" name="stock" id="stock" autocomplete="off" class="form-control">
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="precio">Stock:</label>
-                                    <input type="text" name="precio" id="precio" class="form-control">
+                                    <label for="precio_entrada">Precio:</label>
+                                    <input type="number" name="precio_entrada" id="precio_entrada" autocomplete="off" class="form-control">
                                 </div>
-
 
                                 <div class="mb-3">
-                                    <label for="marca">Marca:</label>
-                                    <input type="text" name="marca" id="marca" class="form-control">
-                                </div>
+                                    <label for="id_usuario">IdUsuario:</label>
+                                    <select id="id_usuario" name="id_usuario" class="form-control">
+                                        <option>-seleccione-</option>
+                                    
+                                        <?php
+                                        foreach ($tipos_usuario as $tipo) :
+                                        ?>
+                                            <option value="<?php echo $tipo['id'] ?>">
+                                                <?php echo $tipo['nombre'] ?>
+                                            </option>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                    </select>
+                                </div>                               
+                                <button id="boton" class="btn btn-primary">Agregar</button>
+                                <a href="VistaEntradas.php" class="btn btn-danger">Cancelar</a>
 
-
-                                <input type="submit" value="Modificar" class="btn btn-primary">
-                                <a href="index.php" class="btn btn-danger">Cancelar</a>
                             </form>
                         </div>
                         <br>
-
-
                     </div>
-
                 </div>
             </div>
         </div>
     </section>
 </div>
-
-<script src="assets/js/productos.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="assets/js/entradas.js"></script>
+<script src="assets/js/ListarEntradas.js"></script>
 <?php
 include_once 'includes/templates/footer.php'
 ?>

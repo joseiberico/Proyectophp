@@ -2,14 +2,34 @@
 include_once 'includes/templates/header.php';
 
 ?>
+<?php
+require "data/database.php";
+?>
 
+<?php
+$sql = "SELECT * FROM producto";
+$resultado = $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+$tipos_producto = [];
+foreach ($resultado as $tipo) {
+    $tipos_producto[] = $tipo;
+}
+
+$sql = "SELECT * FROM usuario";
+$resultado = $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+$tipos_usuario = [];
+foreach ($resultado as $tipo) {
+    $tipos_usuario[] = $tipo;
+}
+?>
+
+    
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Eliminar productos</h1>
+                    <h1 class="m-0">Entrada de productos</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -34,39 +54,69 @@ include_once 'includes/templates/header.php';
                                 </div>
                             </div>
                         </div>
+                        <div class="container">
+                            <h1>Agregar salida</h1>
+                            <form id="formulario">
 
-                        <div class="card-body table-responsive p-0">
-                            <table class="table table-hover text-nowrap">
-                                <thead>
-                                    <tr>
-                                        <th>Id</th>
-                                        <th>Nombre</th>
-                                        <th>Descripcion</th>
-                                        <th>Precio</th>
-                                        <th>Stock</th>
-                                        <th>Marca</th>
-                                        <th>Eliminar</th>
-                                    </tr>
-                                </thead>
-                                <tbody id = "tblData">
-                    
-                        
-                                    </td>
+                                <div class="mb-3">
+                                    <label for="idproducto" class="form-label">IdProducto:</label>
+                                    <select id="idproducto" name="idproducto" class="form-control">
+                                    <option>-seleccione-</option>
+                                    
+                                        <?php
+                                        foreach ($tipos_producto as $tipo) :
+                                        ?>
+                                            <option value="<?php echo $tipo['id'] ?>">
+                                                <?php echo $tipo['nombre'] ?>
+                                            </option>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                    </select>
+                                </div>
 
-                                    </tr>                  
-                                </tbody>
-                            </table>
+                                <div class="mb-3">
+                                    <label for="descripcion" class="form-label">Descripcion:</label>
+                                    <textarea name="descripcion" id="descripcion" autocomplete="off" class="form-control"></textarea>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="stock">Stock:</label>
+                                    <input type="text" name="stock" id="stock" autocomplete="off" class="form-control">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="id_usuario" class="form-label">IdUsuario:</label>
+                                    <select id="id_usuario" name="id_usuario" class="form-control">
+                                    <option>-seleccione-</option>
+                                    
+                                        <?php
+                                        foreach ($tipos_usuario as $tipo) :
+                                        ?>
+                                            <option value="<?php echo $tipo['id'] ?>">
+                                                <?php echo $tipo['nombre'] ?>
+                                            </option>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                    </select>
+                                </div>
+
+                                <button id="boton" class="btn btn-primary">Agregar</button>
+                                <a href="VistaSalidas.php" class="btn btn-danger">Cancelar</a>
+
+                            </form>
                         </div>
-
+                        <br>
                     </div>
-
                 </div>
             </div>
         </div>
     </section>
 </div>
-
-<script src = "assets/js/productos.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="assets/js/salidas.js"></script>
+<script src="assets/js/ListarSalidas.js"></script>
 <?php
 include_once 'includes/templates/footer.php'
 ?>

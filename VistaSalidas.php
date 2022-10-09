@@ -8,7 +8,7 @@ include_once 'includes/templates/header.php';
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Listado de Productos</h1>
+                    <h1 class="m-0">Listado de salidas</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -45,7 +45,7 @@ include_once 'includes/templates/header.php';
                                         <th>IdUsuario</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id ="tblSalidas">
 
                                 </tbody>
                             </table>

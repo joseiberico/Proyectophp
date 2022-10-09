@@ -46,7 +46,7 @@ include_once 'includes/templates/header.php';
                                         <th>IdUsuario</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="tblEntradas">
 
                                 </tbody>
                             </table>

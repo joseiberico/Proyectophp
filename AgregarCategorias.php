@@ -1,14 +1,25 @@
 <?php
 include_once 'includes/templates/header.php';
-?>
 
+?>
+<?php
+require "data/database.php";
+
+
+$sql = "SELECT * FROM categoria_producto";
+$resultado = $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+$tipos_cliente = [];
+foreach ($resultado as $tipo) {
+    $tipos_cliente[] = $tipo;
+}
+?>
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Listado de Categorias</h1>
+                    <h1 class="m-0">Entrada de categorias</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -33,30 +44,29 @@ include_once 'includes/templates/header.php';
                                 </div>
                             </div>
                         </div>
+                        <div class="container">
+                            <h1>Agregar categoria</h1>
+                            <form id="formulario">
+                                <div class="mb-3">
+                                    <label for="nombre" class="form-label">Nombre:</label>
+                                    <input type="text" name="nombre" id="nombre" autocomplete="off" class="form-control">
+                                </div>
 
-                        <div class="card-body table-responsive p-0">
-                            <table class="table table-hover text-nowrap">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Nombre</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="tblCategorias">
-                                    
-                                </tbody>
-                            </table>
+                                <button id="boton" class="btn btn-primary">Agregar</button>
+                                <a href="VistaCategorias.php" class="btn btn-danger">Cancelar</a>
+
+                            </form>
                         </div>
-
+                        <br>
                     </div>
-
                 </div>
             </div>
         </div>
     </section>
 </div>
-
-<script src="assets/js/ListarCategoria.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="assets/js/categorias.js"></script>
+<script src="assets/js/ListaCategorias.js"></script>
 <?php
 include_once 'includes/templates/footer.php'
 ?>
