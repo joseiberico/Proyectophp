@@ -15,7 +15,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     stock='$stock',marca='$marca',idcategoria='$idcategoria' WHERE id=$id";
     $resultado = $db->query($sql);
     if($resultado){
-        header('location:ModificarProducto.php');
+        header('location:VistaProductos.php');
     }
     
     exit;
@@ -30,7 +30,7 @@ $num = $query->rowCount();
 if ($num > 0) {
     $producto = $query->fetch(PDO::FETCH_ASSOC);
 } else {
-    header("Location: VistaProductos.php");
+    header("Location:VistaProductos.php");
 }
 
 

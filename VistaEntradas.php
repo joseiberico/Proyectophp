@@ -61,6 +61,7 @@ include_once 'includes/templates/header.php';
 </div>
 
 <script src="assets/js/ListarEntradas.js"></script>
+<script src="assets/js/EliminaEntrada.js"></script>
 <?php
 include_once 'includes/templates/footer.php'
 ?>

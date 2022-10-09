@@ -60,6 +60,7 @@ include_once 'includes/templates/header.php';
 </div>
 
 <script src="assets/js/ListarSalidas.js"></script>
+<script src="assets/js/EliminaSalida.js"></script>
 <?php
 include_once 'includes/templates/footer.php'
 ?>

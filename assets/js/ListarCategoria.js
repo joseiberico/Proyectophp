@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 async function obtenerCategoria(){
     const url = "data/ListarCategoria.php?accion=listar";
-    const id = "ModificarEntradas.php?id=";
+    const id = "ModificarCategoria.php?id=";
 
 
     

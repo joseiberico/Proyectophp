@@ -13,12 +13,12 @@ require_once('data/editarproducto.php');
 
             </div>
             <div class="mb-3">
-                <label for="nombre" class="form-label">Nombres:</label>
+                <label for="nombre" class="form-label">Nombre:</label>
                 <input type="text" name="nombre" id="nombre" class="form-control" value="<?php echo $producto['nombre'] ?>">
 
             </div>
             <div class="mb-3">
-                <label for="descripcion" class="form-label">Apellidos:</label>
+                <label for="descripcion" class="form-label">Descripcion:</label>
                 <input type="text" name="descripcion" id="descripcion" class="form-control" value="<?php echo $producto['descripcion'] ?>">
 
             </div>

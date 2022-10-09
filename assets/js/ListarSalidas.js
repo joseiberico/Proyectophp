@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 async function obtenerSalida(){
     const url = "data/ListarSalidas.php?accion=listar";
-    const id = "ModificarEntradas.php?id=";
+    const id = "EliminarSalida.php?id=";
 
 
 
@@ -25,7 +25,7 @@ async function obtenerSalida(){
             html += "<td>" + salida.descripcion + "</td>";
             html += "<td>" + salida.stock + "</td>";
             html += "<td>" + salida.id_usuario + "</td>";
-            html += "<td><a href="+id+salida.id+" class='btn btn-warning'>Editar</a></td>";
+            html += "<td><a href="+id+salida.id+" class='btn btn-danger'>Eliminar</a></td>";
             html += "</tr>";
         });
         const tabla = document.querySelector("#tblSalidas");
