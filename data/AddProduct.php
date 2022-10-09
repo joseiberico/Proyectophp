@@ -37,10 +37,10 @@ if(!empty($stmt)){
 
 if(empty($errores)){
     echo json_encode(['respuesta' =>true,'mensaje'=>'se insertaron los datos correctamente']);
-    echo '<script>alert("Se insertaron los datos correctamente")</script>';
+  
 }else{
     echo json_encode(['respuesta' =>true,'mensaje'=>'no se insertaron los datos correctamente']);
-    echo '<script>alert("No se insertaron los datos correctamente")</script>';
+  
 }
 
 ?>
