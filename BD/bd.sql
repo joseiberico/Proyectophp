@@ -1,4 +1,4 @@
-/*create database proyecto;
+create database proyecto;
 use proyecto;
 CREATE TABLE `categoria_producto` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -33,6 +33,23 @@ CREATE TABLE `entrada_producto` (
   CONSTRAINT `FK_Producto_Entradaproducto` FOREIGN KEY (`idproducto`) REFERENCES `producto` (`id`),
   CONSTRAINT `FK_Usuario_Entradaproducto` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`)
 ) ;
+
+create procedure SalidaDeStocks(
+id int ,
+nombre varchar(40),
+descripcion  varchar(120) ,	
+precio int,
+stock int,
+marca varchar(40),
+idcategoria int
+)
+BEGIN
+insert into salida values (id,nombre,descripcion,precio,stock,marca,idcategoria)
+UPDATE producto
+SET  stocks =  stocks - @cantidad    
+WHERE idProducto = @idproducto	
+AND stocks >= @cantidad
+END
 ALTER TABLE usuario add id int auto_increment;
 CREATE TABLE `usuario` (
   `id` int  auto_increment,

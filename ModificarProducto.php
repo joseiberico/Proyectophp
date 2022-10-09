@@ -1,6 +1,6 @@
 <?php
 include_once 'includes/templates/header.php';
-require('data/editarproducto.php');
+require_once('data/editarproducto.php');
 ?>
 
 <div class="container">

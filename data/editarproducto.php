@@ -26,12 +26,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
 
 
-
 $query = $db->prepare("SELECT*FROM producto WHERE id=:id");
 $query->execute(['id' => $id]);
 $num = $query->rowCount();
 if ($num > 0) {
-    $cliente = $query->fetch(PDO::FETCH_ASSOC);
+    $producto = $query->fetch(PDO::FETCH_ASSOC);
 } else {
     header("Location: VistaProductos.php");
 }

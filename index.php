@@ -3,9 +3,12 @@ include_once 'includes/templates/header.php'
 ?>
 
   <!-- Content Wrapper. Contains page content -->
+ 
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
+    <div class="contenedor" ></div>
   <div class="content-header">
+  
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
@@ -17,7 +20,8 @@ include_once 'includes/templates/header.php'
           <li class="breadcrumb-item active">Tecnoventas</li>
         </ol>
       </div><!-- /.col -->
-     
+      
+
 <?php
 include_once 'includes/templates/footer.php'
 ?>
