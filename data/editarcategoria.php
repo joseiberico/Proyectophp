@@ -4,9 +4,9 @@ require_once('data/database.php');
 $id=$_GET['id'];
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
  
-    $nombre = $_POST['nombre'];
+    $nombre = $_POST['tipo'];
     
-    $sql = "UPDATE categoria_producto SET nombre = '$nombre' WHERE id=$id";
+    $sql = "UPDATE categoria_producto SET tipo = '$nombre' WHERE id=$id";
     $resultado = $db->query($sql);
     if($resultado){
         header('location:VistaCategorias.php');

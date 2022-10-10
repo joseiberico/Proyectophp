@@ -22,7 +22,7 @@ async function obtenerCategoria(){
         data.forEach(categoria => {
             html += "<tr>";
             html += "<td>" + categoria.id + "</td>";         
-            html += "<td>" + categoria.nombre + "</td>";
+            html += "<td>" + categoria.tipo + "</td>";
             html += "<td><a href="+id+categoria.id+" class='btn btn-warning'>Editar</a></td>";
             html += "<td><a href="+id2+categoria.id+" class='btn btn-danger'>Eliminar</a></td>";
             html += "</tr>";

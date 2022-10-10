@@ -1,5 +1,6 @@
 <?php
 session_start();
+$usuario =$_SESSION['usuario'];
 require_once ('includes/commons/funciones.php');
 if(!isLogged()){
 header('location:login.php');
@@ -11,7 +12,7 @@ header('location:login.php');
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>TecnoVentas</title>
-  <link href="assets/css/fondo.css"></link>
+  <link href="Proyectophp/assets/css/estilos.css"></link>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">

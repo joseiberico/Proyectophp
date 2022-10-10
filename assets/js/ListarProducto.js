@@ -56,10 +56,10 @@
                     html += "<td>" + producto.id + "</td>";
                     html += "<td>" + producto.nombre + "</td>";
                     html += "<td>" + producto.descripcion + "</td>";
-                    html += "<td>" + producto.precio + "</td>";
+                    html += "<td>" +producto.precio + "</td>";
                     html += "<td>" + producto.stock + "</td>";
                     html += "<td>" + producto.marca + "</td>";
-                    html += "<td>" + producto.idcategoria + "</td>";
+                    html += "<td>" + producto.tipo + "</td>";
                     html += "<td><a href="+id+producto.id+" class='btn btn-warning'>Editar</a></td>";
                     html += "<td><a href="+id2+producto.id+" class='btn btn-danger'>Eliminar</a></td>";
                     html += "</tr>";

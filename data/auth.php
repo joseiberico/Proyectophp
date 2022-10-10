@@ -13,6 +13,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $user = $db->query($sql)->fetch(PDO::FETCH_ASSOC);
         if($user){
             $_SESSION['usuario'] = $user;
+           
             $respuesta = [
                 "codigo" => 200,
                 "data" => $user

@@ -6,7 +6,6 @@ include_once 'includes/templates/header.php'
  
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <div class="contenedor" ></div>
   <div class="content-header">
   
     <div class="container-fluid">

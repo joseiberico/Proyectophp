@@ -10,7 +10,7 @@ $id_usuario = $_POST['id_usuario'] ;
 
 
 
-$stmt = $db->prepare('INSERT INTO salida_producto (id,idproducto,descripcion,stock,id_usuario) VALUES(null,?,?,?,?)');
+$stmt = $db->prepare('INSERT INTO salida_producto (id,idproducto,descripcion,stockS,id_usuario) VALUES(null,?,?,?,?)');
 $stmt->bindParam(1,$idproducto);
 $stmt->bindParam(2,$descripcion);
 $stmt->bindParam(3,$stock);
@@ -20,7 +20,7 @@ $stmt->execute();
 
 
 function insertaNombre($idproducto,$descripcion,$stock,$id_usuario,$db){
-    $stmt = $db->prepare('INSERT INTO salida_producto (id,idproducto,descripcion,stock,id_usuario) VALUES(null,?,?,?,?)');
+    $stmt = $db->prepare('INSERT INTO salida_producto (id,idproducto,descripcion,stockS,id_usuario) VALUES(null,?,?,?,?)');
     $stmt->bindParam($idproducto,$descripcion,$stock,$id_usuario);
     return $stmt->execute();
 }

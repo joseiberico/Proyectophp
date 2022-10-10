@@ -49,7 +49,7 @@ foreach ($resultado as $tipo) {
                             <form id="formulario">
                                 <div class="mb-3">
                                     <label for="nombre" class="form-label">Nombre:</label>
-                                    <input type="text" name="nombre" id="nombre" autocomplete="off" class="form-control">
+                                    <input type="text" name="tipo" id="tipo" autocomplete="off" class="form-control">
                                 </div>
 
                                 <button id="boton" class="btn btn-primary">Agregar</button>

@@ -61,13 +61,6 @@ foreach ($resultado as $tipo) {
                                     <label for="precio">Precio:</label>
                                     <input type="text" name="precio" id="precio" autocomplete="off" class="form-control">
                                 </div>
-
-                                <div class="mb-3">
-                                    <label for="stock">Stock:</label>
-                                    <input type="number" name="stock" id="stock" autocomplete="off" class="form-control">
-                                </div>
-
-
                                 <div class="mb-3">
                                     <label for="marca">Marca:</label>
                                     <input type="numer" name="marca" id="marca" autocomplete="off" class="form-control">
@@ -82,7 +75,7 @@ foreach ($resultado as $tipo) {
                                         foreach ($tipos_cliente as $tipo) :
                                         ?>
                                             <option value="<?php echo $tipo['id'] ?>">
-                                                <?php echo $tipo['nombre'] ?>
+                                                <?php echo $tipo['tipo'] ?>
                                             </option>
                                         <?php
                                         endforeach;

@@ -55,6 +55,11 @@ foreach ($resultado as $tipo) {
                             <h1>Agregar entrada</h1>
                             <form id="formulario">
                             <div class="mb-3">
+                                
+                                 <div class="mb-3">
+                                    <label for="id_usuario">IdUsuario:</label>
+                                    <input type="text" name="id_usuario" id="id_usuario"  readonly="readonly" autocomplete="off" class="form-control" value= <?php echo $usuario['id']?>>          
+                                </div>  
                                     <label for="idproducto">IdProducto:</label>
                                     <select id="idproducto" name="idproducto" class="form-control">
                                         <option>-seleccione-</option>
@@ -79,29 +84,7 @@ foreach ($resultado as $tipo) {
                                 <div class="mb-3">
                                     <label for="stock">Stock:</label>
                                     <input type="number" name="stock" id="stock" autocomplete="off" class="form-control">
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="precio_entrada">Precio:</label>
-                                    <input type="number" name="precio_entrada" id="precio_entrada" autocomplete="off" class="form-control">
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="id_usuario">IdUsuario:</label>
-                                    <select id="id_usuario" name="id_usuario" class="form-control">
-                                        <option>-seleccione-</option>
-                                    
-                                        <?php
-                                        foreach ($tipos_usuario as $tipo) :
-                                        ?>
-                                            <option value="<?php echo $tipo['id'] ?>">
-                                                <?php echo $tipo['nombre'] ?>
-                                            </option>
-                                        <?php
-                                        endforeach;
-                                        ?>
-                                    </select>
-                                </div>                               
+                                </div>                        
                                 <button id="boton" class="btn btn-primary">Agregar</button>
                                 <a href="VistaEntradas.php" class="btn btn-danger">Cancelar</a>
 

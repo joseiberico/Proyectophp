@@ -38,11 +38,11 @@ include_once 'includes/templates/header.php';
                             <table class="table table-hover text-nowrap">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
-                                        <th>IdProducto</th>
+                                        <th>ID Salida</th>
+                                        <th>Empleado</th>
+                                        <th>Producto</th>
                                         <th>Descripcion</th>
-                                        <th>Stock</th>
-                                        <th>IdUsuario</th>
+                                        <th>Stock_Salida</th>                                   
                                     </tr>
                                 </thead>
                                 <tbody id ="tblSalidas">

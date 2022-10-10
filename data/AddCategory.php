@@ -2,25 +2,25 @@
 
 require_once('database.php');
 
-$nombre = $_POST['nombre'] ?? '';
+$tipo = $_POST['tipo'] ?? '';
 
 
 
 
-$stmt = $db->prepare('INSERT INTO categoria_producto (id,nombre) VALUES(null,?)');
-$stmt->bindParam(1,$nombre);
+$stmt = $db->prepare('INSERT INTO categoria_producto (id,tipo) VALUES(null,?)');
+$stmt->bindParam(1,$tipo);
 $stmt->execute();
 
 
 
-function insertaNombre($nombre,$db){
-    $stmt = $db->prepare('INSERT INTO categoria_producto (id,nombre) VALUES(null,?)');
-    $stmt->bindParam($nombre);
+function insertaNombre($tipo,$db){
+    $stmt = $db->prepare('INSERT INTO categoria_producto (id,tipo) VALUES(null,?)');
+    $stmt->bindParam($tipo);
     return $stmt->execute();
 }
 if(!empty($stmt)){
     foreach($stmt as $key => $nombres){
-        if(!insertaNombre($nombre,$db)){
+        if(!insertaNombre($tipo,$db)){
             $errores[] = $key;
         }
     }

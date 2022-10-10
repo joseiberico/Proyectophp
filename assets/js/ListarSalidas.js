@@ -20,11 +20,11 @@ async function obtenerSalida(){
         let html = "";
         data.forEach(salida => {
             html += "<tr>";
-            html += "<td>" + salida.id + "</td>";         
-            html += "<td>" + salida.idproducto + "</td>";
+            html += "<td>" + salida.id + "</td>"; 
+            html += "<td>" + salida.username + "</td>";        
+            html += "<td>" + salida.nombre + "</td>";
             html += "<td>" + salida.descripcion + "</td>";
-            html += "<td>" + salida.stock + "</td>";
-            html += "<td>" + salida.id_usuario + "</td>";
+            html += "<td>" + salida.stockS + "</td>";
             html += "<td><a href="+id+salida.id+" class='btn btn-danger'>Eliminar</a></td>";
             html += "</tr>";
         });
