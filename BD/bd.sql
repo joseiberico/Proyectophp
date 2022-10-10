@@ -2,30 +2,44 @@ create database proyecto;
 use proyecto;
 CREATE TABLE `categoria_producto` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(40) NOT NULL,
+  `tipo` varchar(40) NOT NULL,
   PRIMARY KEY (`id`)
 ) ;
-insert into categoria_producto values (null,'telefonos');
+
 CREATE TABLE `producto` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(40) DEFAULT NULL,
   `descripcion` varchar(120) DEFAULT NULL,
   `precio` double DEFAULT NULL,
-  `stock` int DEFAULT NULL,
+  `stock` int DEFAULT 0,
   `marca` varchar(40) DEFAULT NULL,
   `idcategoria` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_CategoriaP_Producto_idx` (`idcategoria`),
   CONSTRAINT `FK_CategoriaP_Producto` FOREIGN KEY (`idcategoria`) REFERENCES `categoria_producto` (`id`)
 );
-insert into producto values(null,'mazamorra','añañin',20,10,'el tilin',1);
-select * from categoria_producto;
+
+/*Listado de de productos con categoria*/
+select P.id, P.nombre,P.descripcion , P.precio , P.stock , P.marca , C.tipo 
+from producto P 
+inner join categoria_producto C on C.id = P.idcategoria;
+/*Listado de Entradas*/
+select E.id , P.nombre , E.descripcion , E.stockE , U.username
+from entrada_producto E
+inner join producto P on P.id = E.idproducto 
+inner join usuario U on U.id = E.id_usuario ;
+/*Listado de salidas*/
+select S.id , P.nombre , S.descripcion , S.stockS , U.username
+from salida_producto S
+inner join producto P on P.id = S.idproducto 
+inner join usuario U on U.id = S.id_usuario ;
+
+
 CREATE TABLE `entrada_producto` (
   `id` int NOT NULL AUTO_INCREMENT,
   `idproducto` int NOT NULL,
   `descripcion` varchar(120) NOT NULL,
-  `stock` int NOT NULL,
-  `precio_entrada` double NOT NULL,
+  `stockE` int NOT NULL,
   `id_usuario` int NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_Usuario_Entradaproductos_idx` (`id_usuario`),
@@ -34,22 +48,6 @@ CREATE TABLE `entrada_producto` (
   CONSTRAINT `FK_Usuario_Entradaproducto` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`)
 ) ;
 
-create procedure SalidaDeStocks(
-id int ,
-nombre varchar(40),
-descripcion  varchar(120) ,	
-precio int,
-stock int,
-marca varchar(40),
-idcategoria int
-)
-BEGIN
-insert into salida values (id,nombre,descripcion,precio,stock,marca,idcategoria)
-UPDATE producto
-SET  stocks =  stocks - @cantidad    
-WHERE idProducto = @idproducto	
-AND stocks >= @cantidad
-END
 ALTER TABLE usuario add id int auto_increment;
 CREATE TABLE `usuario` (
   `id` int  auto_increment,
@@ -61,11 +59,12 @@ CREATE TABLE `usuario` (
   UNIQUE KEY `username_UNIQUE` (`username`)
 ) ;
 
+
 CREATE TABLE `salida_producto` (
   `id` int NOT NULL AUTO_INCREMENT,
   `idproducto` int DEFAULT NULL,
   `descripcion` varchar(120) DEFAULT NULL,
-  `stock` int DEFAULT NULL,
+  `stockS` int DEFAULT NULL,
   `id_usuario` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_Producto_Salidaproducto_idx` (`idproducto`),
